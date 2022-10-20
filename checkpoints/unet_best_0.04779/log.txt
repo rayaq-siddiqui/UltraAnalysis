@@ -1,0 +1,236 @@
+Epoch 1/50
+17/17 [==============================] - ETA: 0s - loss: 0.3431
+Epoch 1: loss improved from inf to 0.34310, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 36s 2s/step - loss: 0.3431 - lr: 0.0010
+Epoch 2/50
+17/17 [==============================] - ETA: 0s - loss: 0.3221
+Epoch 2: loss improved from 0.34310 to 0.32206, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 31s 2s/step - loss: 0.3221 - lr: 0.0010
+Epoch 3/50
+17/17 [==============================] - ETA: 0s - loss: 0.3306
+Epoch 3: loss did not improve from 0.32206
+17/17 [==============================] - 28s 2s/step - loss: 0.3306 - lr: 0.0010
+Epoch 4/50
+17/17 [==============================] - ETA: 0s - loss: 0.3166
+Epoch 4: loss improved from 0.32206 to 0.31657, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.3166 - lr: 0.0010
+Epoch 5/50
+17/17 [==============================] - ETA: 0s - loss: 0.3000
+Epoch 5: loss improved from 0.31657 to 0.29999, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 30s 2s/step - loss: 0.3000 - lr: 0.0010
+Epoch 6/50
+17/17 [==============================] - ETA: 0s - loss: 0.2856
+Epoch 6: loss improved from 0.29999 to 0.28561, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.2856 - lr: 0.0010
+Epoch 7/50
+17/17 [==============================] - ETA: 0s - loss: 0.2988
+Epoch 7: loss did not improve from 0.28561
+17/17 [==============================] - 27s 2s/step - loss: 0.2988 - lr: 0.0010
+Epoch 8/50
+17/17 [==============================] - ETA: 0s - loss: 0.2892
+Epoch 8: loss did not improve from 0.28561
+17/17 [==============================] - 27s 2s/step - loss: 0.2892 - lr: 0.0010
+Epoch 9/50
+17/17 [==============================] - ETA: 0s - loss: 0.2789
+Epoch 9: loss improved from 0.28561 to 0.27888, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.2789 - lr: 0.0010
+Epoch 10/50
+17/17 [==============================] - ETA: 0s - loss: 0.2748
+Epoch 10: loss improved from 0.27888 to 0.27480, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.2748 - lr: 0.0010
+Epoch 11/50
+17/17 [==============================] - ETA: 0s - loss: 0.2614
+Epoch 11: loss improved from 0.27480 to 0.26141, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.2614 - lr: 0.0010
+Epoch 12/50
+17/17 [==============================] - ETA: 0s - loss: 0.2532
+Epoch 12: loss improved from 0.26141 to 0.25317, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.2532 - lr: 0.0010
+Epoch 13/50
+17/17 [==============================] - ETA: 0s - loss: 0.2571
+Epoch 13: loss did not improve from 0.25317
+17/17 [==============================] - 27s 2s/step - loss: 0.2571 - lr: 0.0010
+Epoch 14/50
+17/17 [==============================] - ETA: 0s - loss: 0.2610
+Epoch 14: loss did not improve from 0.25317
+17/17 [==============================] - 27s 2s/step - loss: 0.2610 - lr: 0.0010
+Epoch 15/50
+17/17 [==============================] - ETA: 0s - loss: 0.2549
+Epoch 15: loss did not improve from 0.25317
+17/17 [==============================] - 27s 2s/step - loss: 0.2549 - lr: 0.0010
+Epoch 16/50
+17/17 [==============================] - ETA: 0s - loss: 0.2605
+Epoch 16: loss did not improve from 0.25317
+17/17 [==============================] - 27s 2s/step - loss: 0.2605 - lr: 0.0010
+Epoch 17/50
+17/17 [==============================] - ETA: 0s - loss: 0.2402
+Epoch 17: loss improved from 0.25317 to 0.24015, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.2402 - lr: 0.0010
+Epoch 18/50
+17/17 [==============================] - ETA: 0s - loss: 0.2282
+Epoch 18: loss improved from 0.24015 to 0.22819, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.2282 - lr: 0.0010
+Epoch 19/50
+17/17 [==============================] - ETA: 0s - loss: 0.2401
+Epoch 19: loss did not improve from 0.22819
+17/17 [==============================] - 27s 2s/step - loss: 0.2401 - lr: 0.0010
+Epoch 20/50
+17/17 [==============================] - ETA: 0s - loss: 0.2223
+Epoch 20: loss improved from 0.22819 to 0.22226, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.2223 - lr: 0.0010
+Epoch 21/50
+17/17 [==============================] - ETA: 0s - loss: 0.2024
+Epoch 21: loss improved from 0.22226 to 0.20240, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.2024 - lr: 0.0010
+Epoch 22/50
+17/17 [==============================] - ETA: 0s - loss: 0.1969
+Epoch 22: loss improved from 0.20240 to 0.19695, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.1969 - lr: 0.0010
+Epoch 23/50
+17/17 [==============================] - ETA: 0s - loss: 0.2075
+Epoch 23: loss did not improve from 0.19695
+17/17 [==============================] - 27s 2s/step - loss: 0.2075 - lr: 0.0010
+Epoch 24/50
+17/17 [==============================] - ETA: 0s - loss: 0.1992
+Epoch 24: loss did not improve from 0.19695
+17/17 [==============================] - 27s 2s/step - loss: 0.1992 - lr: 0.0010
+Epoch 25/50
+17/17 [==============================] - ETA: 0s - loss: 0.1948
+Epoch 25: loss improved from 0.19695 to 0.19484, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.1948 - lr: 0.0010
+Epoch 26/50
+17/17 [==============================] - ETA: 0s - loss: 0.1812
+Epoch 26: loss improved from 0.19484 to 0.18119, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.1812 - lr: 0.0010
+Epoch 27/50
+17/17 [==============================] - ETA: 0s - loss: 0.1722
+Epoch 27: loss improved from 0.18119 to 0.17218, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.1722 - lr: 0.0010
+Epoch 28/50
+17/17 [==============================] - ETA: 0s - loss: 0.1697
+Epoch 28: loss improved from 0.17218 to 0.16971, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.1697 - lr: 0.0010
+Epoch 29/50
+17/17 [==============================] - ETA: 0s - loss: 0.1686
+Epoch 29: loss improved from 0.16971 to 0.16858, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.1686 - lr: 0.0010
+Epoch 30/50
+17/17 [==============================] - ETA: 0s - loss: 0.1541
+Epoch 30: loss improved from 0.16858 to 0.15414, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.1541 - lr: 0.0010
+Epoch 31/50
+17/17 [==============================] - ETA: 0s - loss: 0.1519
+Epoch 31: loss improved from 0.15414 to 0.15189, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.1519 - lr: 0.0010
+Epoch 32/50
+17/17 [==============================] - ETA: 0s - loss: 0.1474
+Epoch 32: loss improved from 0.15189 to 0.14736, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.1474 - lr: 0.0010
+Epoch 33/50
+17/17 [==============================] - ETA: 0s - loss: 0.1341
+Epoch 33: loss improved from 0.14736 to 0.13408, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.1341 - lr: 0.0010
+Epoch 34/50
+17/17 [==============================] - ETA: 0s - loss: 0.1282
+Epoch 34: loss improved from 0.13408 to 0.12825, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.1282 - lr: 0.0010
+Epoch 35/50
+17/17 [==============================] - ETA: 0s - loss: 0.1134
+Epoch 35: loss improved from 0.12825 to 0.11341, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.1134 - lr: 0.0010
+Epoch 36/50
+17/17 [==============================] - ETA: 0s - loss: 0.1071
+Epoch 36: loss improved from 0.11341 to 0.10713, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.1071 - lr: 0.0010
+Epoch 37/50
+17/17 [==============================] - ETA: 0s - loss: 0.1052
+Epoch 37: loss improved from 0.10713 to 0.10516, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.1052 - lr: 0.0010
+Epoch 38/50
+17/17 [==============================] - ETA: 0s - loss: 0.1040
+Epoch 38: loss improved from 0.10516 to 0.10398, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.1040 - lr: 0.0010
+Epoch 39/50
+17/17 [==============================] - ETA: 0s - loss: 0.0954
+Epoch 39: loss improved from 0.10398 to 0.09545, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.0954 - lr: 0.0010
+Epoch 40/50
+17/17 [==============================] - ETA: 0s - loss: 0.0826
+Epoch 40: loss improved from 0.09545 to 0.08264, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.0826 - lr: 0.0010
+Epoch 41/50
+17/17 [==============================] - ETA: 0s - loss: 0.0751
+Epoch 41: loss improved from 0.08264 to 0.07514, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.0751 - lr: 0.0010
+Epoch 42/50
+17/17 [==============================] - ETA: 0s - loss: 0.0679
+Epoch 42: loss improved from 0.07514 to 0.06787, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.0679 - lr: 0.0010
+Epoch 43/50
+17/17 [==============================] - ETA: 0s - loss: 0.0647
+Epoch 43: loss improved from 0.06787 to 0.06469, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.0647 - lr: 0.0010
+Epoch 44/50
+17/17 [==============================] - ETA: 0s - loss: 0.0779
+Epoch 44: loss did not improve from 0.06469
+17/17 [==============================] - 27s 2s/step - loss: 0.0779 - lr: 0.0010
+Epoch 45/50
+17/17 [==============================] - ETA: 0s - loss: 0.0873
+Epoch 45: loss did not improve from 0.06469
+17/17 [==============================] - 27s 2s/step - loss: 0.0873 - lr: 0.0010
+Epoch 46/50
+17/17 [==============================] - ETA: 0s - loss: 0.0837
+Epoch 46: loss did not improve from 0.06469
+17/17 [==============================] - 28s 2s/step - loss: 0.0837 - lr: 0.0010
+Epoch 47/50
+17/17 [==============================] - ETA: 0s - loss: 0.0756
+Epoch 47: loss did not improve from 0.06469
+17/17 [==============================] - 27s 2s/step - loss: 0.0756 - lr: 0.0010
+Epoch 48/50
+17/17 [==============================] - ETA: 0s - loss: 0.0607
+Epoch 48: loss improved from 0.06469 to 0.06065, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.0607 - lr: 0.0010
+Epoch 49/50
+17/17 [==============================] - ETA: 0s - loss: 0.0551
+Epoch 49: loss improved from 0.06065 to 0.05515, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.0551 - lr: 0.0010
+Epoch 50/50
+17/17 [==============================] - ETA: 0s - loss: 0.0478
+Epoch 50: loss improved from 0.05515 to 0.04779, saving model to checkpoints/unet
+INFO:tensorflow:Assets written to: checkpoints/unet/assets
+17/17 [==============================] - 29s 2s/step - loss: 0.0478 - lr: 0.0010

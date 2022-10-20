@@ -32,7 +32,7 @@ def decoder_block(input, skip_features, num_filters):
 
 
 # S is the output of the conv block --> P is the output of the max pooling --> d is the ouput of the decoder block
-def unet_arch(input_shape):
+def UNet(input_shape):
     inputs = Input(input_shape)
 
     # Following the U-net Architecture
