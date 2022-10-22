@@ -65,6 +65,5 @@ def train_sklearn(_model, _verbose):
     # fit the model
     train_X, train_y = traingen.get_all_data()
     svm.fit(train_X, train_y)
-    del train_X, train_y
 
     return model, traingen, valgen

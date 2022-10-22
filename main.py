@@ -24,6 +24,7 @@ model_mapping = {
 
 # main
 if __name__ == '__main__':
+    # defining argument parser
     parser = argparse.ArgumentParser(description='process the inputs')
     parser.add_argument(
         '--model',
@@ -44,6 +45,7 @@ if __name__ == '__main__':
         default=1
     )
 
+    # extracting values from argument parser
     args = parser.parse_args()
     _model = args.model
     _epochs = args.epochs
@@ -52,19 +54,30 @@ if __name__ == '__main__':
     if _model not in model_mapping.keys():
         raise Exception('not a valid model')
 
+    # training the individual models
     im_size = (448,448,3)
     BATCH_SIZE = 16
+    model, traingen, valgen = None, None, None
 
     if model_mapping[_model] == 'cnn':
-        model = train_cnn(
+        model, traingen, valgen = train_cnn(
             _model, 
             _verbose,
             _epochs,
             BATCH_SIZE=BATCH_SIZE, 
-            im_size=im_size
+            im_size=im_size,
         )
     elif model_mapping[_model] == 'seg':
-        pass
+        model, traingen, valgen = train_segmentation(
+            _model, 
+            _verbose, 
+            _epochs, 
+            BATCH_SIZE=BATCH_SIZE, 
+            im_size=im_size, 
+        )
     elif model_mapping[_model] == 'sklearn':
-        pass
+        model, traingen, valgen = train_sklearn(
+            _model, 
+            _verbose,
+        )
 
