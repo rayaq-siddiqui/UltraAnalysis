@@ -1,11 +1,11 @@
 from tensorflow.keras.layers import Dense, Dropout, MaxPooling2D, BatchNormalization, Input, Conv2D, Flatten
 from tensorflow.keras.models import Model
-from ClassWeightMult import ClassWeightMult
+from .ClassWeightMult import ClassWeightMult
 
 
-def simple_seq_model(class_weight):
+def simple_seq_model(class_weight, input_shape=(448,448,3)):
     # sequential attempt
-    inp =  Input((448,448,3))
+    inp =  Input(input_shape)
     x = BatchNormalization()(inp)
     
     x = Conv2D(64, kernel_size=6, strides=(3,3), activation='relu', kernel_initializer='glorot_normal')(x)
@@ -21,7 +21,7 @@ def simple_seq_model(class_weight):
     x = Flatten()(x)
     x = Dense(512, activation='relu')(x)
     x = Dense(128, activation='relu')(x)
-    x = Dense(out, activation='softmax')(x)
+    x = Dense(3, activation='softmax')(x)
     out = ClassWeightMult(class_weight)(x)
     
     model = Model(inp, out)

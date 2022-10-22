@@ -1,7 +1,7 @@
 from tensorflow.keras.layers import GlobalAveragePooling2D, Dense, Dropout
 from tensorflow.keras.applications.resnet50 import ResNet50
 from tensorflow.keras.models import Model
-from ClassWeightMult import ClassWeightMult
+from .ClassWeightMult import ClassWeightMult
 
 
 def resnet50(class_weight, freeze_layers=10, input_shape=(448,448,3)):
@@ -13,7 +13,7 @@ def resnet50(class_weight, freeze_layers=10, input_shape=(448,448,3)):
     x = Dropout(0.5)(x)
     x = Dense(512, activation='relu')(x)
     x = Dropout(0.5)(x)
-    x = Dense(7,activation='softmax')(x)
+    x = Dense(3,activation='softmax')(x)
     out = ClassWeightMult(class_weight)(x)
 
     model_final = Model(model.input, out)
