@@ -12,6 +12,7 @@ from models import (
     unet,
     enet,
 )
+from utils.diceloss import DiceLoss
 
 def train_segmentation(_model, _verbose, _epochs, BATCH_SIZE=16, im_size=(448,448,3), load_weights=False):
     # getting the image and mask file paths
@@ -38,24 +39,32 @@ def train_segmentation(_model, _verbose, _epochs, BATCH_SIZE=16, im_size=(448,44
     traingen = SegmentationDataGenerator(train_df, 'img', 'labels', BATCH_SIZE)
     valgen = SegmentationDataGenerator(val_df, 'img', 'labels', BATCH_SIZE)
 
+    print('data loaded and generators created')
+
     # getting the model
     model = None
 
     if _model == 'unet':
         model = unet.UNet(im_size)
+
+        # getting params ready to compile model
+        if load_weights and os.path.exists('checkpoints/unet/'):
+            print('weights loaded')
+            model.load_weights('checkpoints/unet/')
     elif _model == 'enet':
         model = enet.ENet(
             n_classes=1, 
             input_height=im_size[0], 
             input_width=im_size[1]
-        )
+        )  
 
+        # getting params ready to compile model
+        if load_weights and os.path.exists('checkpoints/enet/'):
+            print('weights loaded')
+            model.load_weights('checkpoints/enet/')
+
+    print('model loaded')
     print(model.summary())
-
-    # getting params ready to compile model
-    if load_weights and os.path.exists('checkpoints/unet/'):
-        print('weights loaded')
-        model.load_weights('checkpoints/unet/')
 
     opt = tf.keras.optimizers.Adam(
         learning_rate=0.001,
@@ -69,6 +78,8 @@ def train_segmentation(_model, _verbose, _epochs, BATCH_SIZE=16, im_size=(448,44
         loss=loss,
         # metrics=['accuracy']
     )
+
+    print('model compiled')
 
     # creating callbacks
     checkpoint = tf.keras.callbacks.ModelCheckpoint(
@@ -95,7 +106,7 @@ def train_segmentation(_model, _verbose, _epochs, BATCH_SIZE=16, im_size=(448,44
         callbacks=callbacks
     )
 
-    model.load_weights('checkpoints/unet/')
+    print('model fitted complete')
 
     return model, traingen, valgen
 

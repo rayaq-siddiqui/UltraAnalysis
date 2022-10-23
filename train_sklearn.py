@@ -49,8 +49,10 @@ def train_sklearn(_model, _verbose):
     val_df = pd.DataFrame({'path': X_test, 'class': y_test})
 
     # creating the train/val generator
-    traingen = SklearnDataGenerator(train_df, 'path', 'class', BATCH_SIZE)
-    valgen = SklearnDataGenerator(val_df, 'path', 'class', BATCH_SIZE)
+    traingen = SklearnDataGenerator(train_df, 'path', 'class')
+    valgen = SklearnDataGenerator(val_df, 'path', 'class')
+
+    print('data loaded and generators created')
 
     # get the model
     model = None
@@ -61,9 +63,12 @@ def train_sklearn(_model, _verbose):
         model = svm.svm()
     elif _model == 'svm':
         model = knn.knn()
+    print('model loaded')
 
     # fit the model
     train_X, train_y = traingen.get_all_data()
-    svm.fit(train_X, train_y)
+    model.fit(train_X, train_y)
+
+    print('model fit')
 
     return model, traingen, valgen
