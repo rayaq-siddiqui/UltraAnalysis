@@ -5,13 +5,12 @@ from PIL import Image
 
 class SklearnDataGenerator(tf.keras.utils.Sequence):
     
-    def __init__(self, df, X_col, y_col, batch_size=16, shuffle=True):
+    def __init__(self, df, X_col, y_col, shuffle=True):
         self.df = df.copy()
         self.df = self.df.sample(frac=1).reset_index(drop=True)
 
         self.X_col = X_col
         self.y_col = y_col
-        self.batch_size = batch_size
         self.shuffle = shuffle
         self.n = len(self.df)
 
@@ -57,10 +56,10 @@ class SklearnDataGenerator(tf.keras.utils.Sequence):
         return X,y
 
 
-    def __getitem__(self, index):
-        batches = self.df.iloc[index*self.batch_size:(index+1)*self.batch_size]
-        X,y = self.__get_data(batches)
-        return X,y
+    # def __getitem__(self, index):
+    #     batches = self.df.iloc[index*self.batch_size:(index+1)*self.batch_size]
+    #     X,y = self.__get_data(batches)
+    #     return X,y
 
 
     def get_all_data(self):
@@ -82,8 +81,8 @@ class SklearnDataGenerator(tf.keras.utils.Sequence):
         for label in labels:
             outy.append(label)
 
-        return outX, outy
+        return np.array(outX), outy
 
 
     def __len__(self):
-        return self.n // self.batch_size
+        return self.n

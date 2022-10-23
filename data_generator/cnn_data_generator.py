@@ -63,5 +63,26 @@ class CNNDataGenerator(tf.keras.utils.Sequence):
         return X,y
 
 
+    def get_all_data(self):
+        paths = self.df[self.X_col]
+        labels = self.df[self.y_col]
+
+        outX = []
+
+        for path in paths:
+            im = Image.open(path)
+            im = im.crop((57,0,505,448))
+            im = np.array(im)/255.
+
+            outX.append(im)
+
+        outy = []
+
+        for label in labels:
+            outy.append(label)
+
+        return np.array(outX), outy
+
+
     def __len__(self):
         return self.n // self.batch_size

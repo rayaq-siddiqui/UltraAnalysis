@@ -6,7 +6,7 @@ from PIL import Image
 
 class SegmentationDataGenerator(tf.keras.utils.Sequence):
     
-    def __init__(self, df, X_col, y_col, batch_size=32, shuffle=False):
+    def __init__(self, df, X_col, y_col, batch_size=32, shuffle=True):
         self.df = df.copy()
         self.X_col = X_col
         self.y_col = y_col
