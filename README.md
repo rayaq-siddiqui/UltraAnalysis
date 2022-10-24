@@ -1,3 +1,3 @@
-# UltraAnalysis
-### Ultrasound Image Segmentation & Classification
+# UltraAnalysis, Ultrasound Image Segmentation & Classification
+
 Rayaq Siddiqui
