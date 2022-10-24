@@ -1,2 +1,3 @@
-# breast_ultrasound_seg_cnn
+# UltraAnalysis
+## Ultrasound Image Segmentation & Classification
 Rayaq Siddiqui
