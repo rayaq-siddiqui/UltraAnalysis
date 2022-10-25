@@ -6,7 +6,7 @@ from PIL import Image
 
 class CNNDataGenerator(tf.keras.utils.Sequence):
     
-    def __init__(self, df, X_col, y_col, batch_size=16, shuffle=True):
+    def __init__(self, df, X_col, y_col, batch_size=16, im_size=(448,448,3), shuffle=True):
         self.df = df.copy()
         self.df = self.df.sample(frac=1).reset_index(drop=True)
 
@@ -15,6 +15,7 @@ class CNNDataGenerator(tf.keras.utils.Sequence):
         self.batch_size = batch_size
         self.shuffle = shuffle
         self.n = len(self.df)
+        self.im_size = im_size
 
 
     def on_epoch_end(self):
@@ -29,6 +30,7 @@ class CNNDataGenerator(tf.keras.utils.Sequence):
             im = Image.open(path)
             im = im.crop((57,0,505,448))
             im = np.array(im)/255.
+            im = np.resize(im, self.im_size)
 
             out.append(im)
 
@@ -73,6 +75,7 @@ class CNNDataGenerator(tf.keras.utils.Sequence):
             im = Image.open(path)
             im = im.crop((57,0,505,448))
             im = np.array(im)/255.
+            im = np.resize(im, self.im_size)
 
             outX.append(im)
 
@@ -82,6 +85,32 @@ class CNNDataGenerator(tf.keras.utils.Sequence):
             outy.append(label)
 
         return np.array(outX), outy
+
+
+    def get_all_X(self):
+        self.on_epoch_end()
+        paths = self.df[self.X_col]
+        outX = []
+
+        for path in paths:
+            im = Image.open(path)
+            im = im.crop((57,0,505,448))
+            im = np.array(im)/255.
+            im = np.resize(im, self.im_size)
+
+            outX.append(im)
+
+        return np.array(outX)
+
+
+    def get_all_y(self):
+        labels = self.df[self.y_col]
+        outy = []
+
+        for label in labels:
+            outy.append(label)
+
+        return outy
 
 
     def __len__(self):
