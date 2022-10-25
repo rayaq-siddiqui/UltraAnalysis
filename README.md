@@ -35,4 +35,4 @@ The command above initiates the server and will all GET/POST requests to come in
 
 ### Mask Generated of the Image given the original image as input
 
-![](results/enet/mask.png)
+![](results/enet/pred.png)
