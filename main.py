@@ -6,7 +6,7 @@ from train_sklearn import train_sklearn
 from matplotlib import pyplot as plt
 import tensorflow as tf
 import numpy as np
-from sklearn.metrics import f1_score
+from sklearn.metrics import f1_score, balanced_accuracy_score
 
 
 # global model mapping calling specific training function
@@ -65,18 +65,20 @@ if __name__ == '__main__':
     _model = args.model
     _epochs = args.epochs
     _verbose = args.verbose
-    _weights = args.weights
+    _weights = bool(args.weights)
 
     if _model not in model_mapping.keys():
         raise Exception('not a valid model')
 
     # training the individual models
-    im_size = (448,448,3)
+    # im_size = (448,448,3)
+    # im_size = (448//5, 448//5, 3)
     BATCH_SIZE = 16
     model, traingen, valgen = None, None, None
 
     if model_mapping[_model] == 'cnn':
         print('cnn model')
+        im_size = (448//5, 448//5, 3)
         model, traingen, valgen = train_cnn(
             _model, 
             _verbose,
@@ -97,10 +99,14 @@ if __name__ == '__main__':
         pred = pred_new
 
         f1 = f1_score(acc,pred, average='micro')
+        b_acc = balanced_accuracy_score(acc, pred)
         print(f"f1_score: {f1}")
+        print(f"balanced_acc_score: {b_acc}")
+
 
     elif model_mapping[_model] == 'seg':
         print('segmentation model')
+        im_size = (448,448,3)
         model, traingen, valgen = train_segmentation(
             _model, 
             _verbose, 
@@ -117,8 +123,6 @@ if __name__ == '__main__':
         pred = model.predict(tf.convert_to_tensor([img]))[0]        
         pred = fn(pred)
 
-        print(np.unique(pred))
-
         # display images
         plt.imshow(img, interpolation='nearest')
         plt.show()
@@ -129,6 +133,7 @@ if __name__ == '__main__':
 
     elif model_mapping[_model] == 'sklearn':
         print('sklearn model')
+        im_size = (448//5, 448//5, 3)
         model, traingen, valgen = train_sklearn(
             _model, 
             _verbose,

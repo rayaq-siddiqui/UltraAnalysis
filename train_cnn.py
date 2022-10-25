@@ -53,10 +53,23 @@ def train_cnn(_model, _verbose, _epochs, BATCH_SIZE=16, im_size=(448,448,3)):
     val_df = pd.DataFrame({'path': X_test, 'class': y_test})
 
     # creating the train/val generator
-    traingen = CNNDataGenerator(train_df, 'path', 'class', BATCH_SIZE)
-    valgen = CNNDataGenerator(val_df, 'path', 'class', BATCH_SIZE)
+    traingen = CNNDataGenerator(train_df, 'path', 'class', BATCH_SIZE, im_size=im_size)
+    valgen = CNNDataGenerator(val_df, 'path', 'class', BATCH_SIZE, im_size=im_size)
 
     print('data loaded and generators created')
+
+    # alters the data for better cnn models
+    datagen = tf.keras.preprocessing.image.ImageDataGenerator(
+        rotation_range = 10,
+        width_shift_range = 0.2,
+        height_shift_range = 0.2,
+        shear_range = 0.2,
+        horizontal_flip = True,
+        vertical_flip = True,
+        # fill_mode = 'nearest',
+    )
+
+    print('data preprocessing method completed')
 
     # calculate the class_weights
     data_dir='cnn_data/'
@@ -102,14 +115,14 @@ def train_cnn(_model, _verbose, _epochs, BATCH_SIZE=16, im_size=(448,448,3)):
     loss = tf.keras.losses.SparseCategoricalCrossentropy()
     metrics = [
         'accuracy',
-        # tfa.metrics.F1Score(3, 'micro')
+        tfa.metrics.F1Score(3, 'micro')
     ]
 
     # compiling model
     model.compile(
         optimizer=opt,
         loss=loss,
-        metrics=metrics
+        # metrics=metrics
     )
 
     print('model compiled')
@@ -131,7 +144,13 @@ def train_cnn(_model, _verbose, _epochs, BATCH_SIZE=16, im_size=(448,448,3)):
     )
     callbacks = [lr_reduction, checkpoint]
 
+    # traingen.on_epoch_end()
     model.fit(
+        # datagen.flow(
+        #     traingen.get_all_X(), 
+        #     traingen.get_all_y(), 
+        #     batch_size=BATCH_SIZE
+        # ),
         traingen,
         validation_data=valgen,
         epochs=_epochs,
@@ -139,6 +158,6 @@ def train_cnn(_model, _verbose, _epochs, BATCH_SIZE=16, im_size=(448,448,3)):
         callbacks=callbacks,
     )
 
-    print('model fitted complete')
+    print('model fit complete')
 
     return model, traingen, valgen

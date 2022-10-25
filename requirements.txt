@@ -1,0 +1,10 @@
+pandas
+numpy
+tensorflow
+tensorflow_addons
+PIL
+os
+sklearn
+uvicorn
+gunicorn
+fastapi
