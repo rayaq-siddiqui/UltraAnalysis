@@ -1,6 +1,6 @@
 # UltraAnalysis, Ultrasound Image Segmentation & Classification
 
-Rayaq Siddiqui
+Author: Rayaq Siddiqui
 
 ## Purpose
 
@@ -11,7 +11,7 @@ Developing an ultrasound analysis API that can determine whether an individual h
 2. CNN Models
 3. Sklearn Image Classification Models
 
-## certain commands
+## Certain Commands
 
 The main.py command is meant for training the model on their respect datasets. 
 
