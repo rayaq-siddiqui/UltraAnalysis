@@ -4,7 +4,7 @@ Author: Rayaq Siddiqui
 
 ## Purpose
 
-Developing an ultrasound analysis API that can determine whether an individual has benign or malignant forms of cancer, or if they do not have any signs of cancer (i.e. normal). Given that an individual classifies as having some form of cancer growth in their ultrasound, there is a semantic segmentation model that can develop a mask to locate the benign cancer growth. This is going to made into an API since it will be easier to increase the usability of this model. For instance, if hospitals want to create quick masks around cancer growths in ultrasounds, they could simply use this model. Or for instance, if they are unsure if the there exists a benign, malignant or no cancer in the individual, they can use the classification models to ensure with 90%+ accuracy their analysis is correct
+Developing an ultrasound analysis API that can determine whether an individual has benign or malignant forms of cancer, or if they do not have any signs of cancer (i.e. normal). Given that an individual classifies as having some form of cancer growth in their ultrasound, there is a semantic segmentation model that can develop a mask to locate the benign cancer growth. This is going to made into an API since it will be easier to increase the usability of this model. For instance, if hospitals want to create quick masks around cancer growths in ultrasounds, they could simply use this model. Or for instance, if they are unsure if the there exists a benign, malignant or no cancer in the individual, they can use the classification models to ensure with 90%+ accuracy their analysis is correct.
 
 ## Developing an API that can access 3 types of models
 1. Semantic Segmentation Models
