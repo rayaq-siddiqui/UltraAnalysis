@@ -36,15 +36,22 @@ async def prediction_endpoint():
 
 
 @app.get('/seg/')
-async def prediction_endpoint():
+async def segmentation_model(data: UploadFile = File(...)):
+    # using best model for now
+    model = enet.ENet(
+        n_classes=1, 
+        input_height=im_size[0], 
+        input_width=im_size[1]
+    )
+    model.load_weights('checkpoints/enet_best_0.01815/')
     return {'hello': 'world'}
 
 
 @app.get('/cnn/')
-async def prediction_endpoint():
+async def cnn_model(data: UploadFile = File(...)):
     return {'hello': 'world'}
 
 
 @app.get('/sklearn/')
-async def prediction_endpoint():
+async def sklearn_model(data: UploadFile = File(...)):
     return {'hello': 'world'}
