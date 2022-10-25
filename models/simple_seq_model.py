@@ -21,8 +21,9 @@ def simple_seq_model(class_weight, input_shape=(448,448,3)):
     x = Flatten()(x)
     x = Dense(512, activation='relu')(x)
     x = Dense(128, activation='relu')(x)
-    x = Dense(3, activation='softmax')(x)
+    x = Dense(3, activation='relu')(x)
     out = ClassWeightMult(class_weight)(x)
+    out = Dense(3, activation='softmax')(out)
     
     model = Model(inp, out)
 

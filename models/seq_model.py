@@ -28,8 +28,9 @@ def seq_model(class_weight, input_shape=(448,448,3)):
     x = Dense(1024, activation='relu')(x)
     x = Dense(256, activation='relu')(x)
     x = Dense(64, activation='relu')(x)
-    x = Dense(3, activation='softmax')(x)
+    x = Dense(3, activation='relu')(x)
     out = ClassWeightMult(class_weight)(x)
+    out = Dense(3, activation='softmax')(out)
     
     model = Model(inp, out)
 
