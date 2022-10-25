@@ -1,8 +1,8 @@
 # imports
 import argparse
-from train_cnn import train_cnn
-from train_segmentation import train_segmentation
-from train_sklearn import train_sklearn
+from train.train_cnn import train_cnn
+from train.train_segmentation import train_segmentation
+from train.train_sklearn import train_sklearn
 from matplotlib import pyplot as plt
 import tensorflow as tf
 import numpy as np
