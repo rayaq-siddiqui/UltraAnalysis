@@ -1,2 +1,2 @@
-notebooks/** linguist-vendored
+*.ipynb binary linguist-detectable=false
 *.pb binary linguist-detectable=false
