@@ -1,1 +1,2 @@
 notebooks/** linguist-vendored
+*.pb binary linguist-detectable=false
